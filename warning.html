@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安全警报！</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="warning-theme">
+    <div class="container">
+        <div class="warning-header">
+            <span class="warning-icon">⚠️</span>
+            <h1>高危警告！个人信息已泄露！</h1>
+        </div>
+
+        <div class="info-box">
+            <p>刚才的页面是一个精心设计的<strong>钓鱼骗局</strong>！</p>
+            <!-- JavaScript会把这里替换成用户输入的手机号 -->
+            <p>如果您在真实的网络环境中输入了信息，您的手机号 <span class="leaked-info" id="display-phone"></span> 很可能已被不法分子获取。</p>
+            <p><strong>请放心！本页面仅为模拟测试，您的号码仅用于演示，<u>不会被发送到任何服务器</u>。</strong></p>
+        </div>
+
+        <div class="simulation-box">
+            <h2>🧠 骗局是如何发生的？</h2>
+            <ol>
+                <li><strong>诱饵传播：</strong>骗子利用“红包”、“优惠”等作为诱饵，在微信群、朋友圈扩散伪造的二维码。</li>
+                <li><strong>伪造界面：</strong>制作与知名App（如支付宝、银行）高度相似的界面，降低你的警惕性。</li>
+                <li><strong>窃取信息：</strong>你输入的手机号、验证码、密码等信息会直接发送到骗子的服务器。</li>
+                <li><strong>后续攻击：</strong>利用你的手机号进行诈骗、撞库（尝试登录你的其他账户）、发送钓鱼短信等。</li>
+            </ol>
+        </div>
+
+        <div class="knowledge-box">
+            <h2>🛡️ 如何防范网络钓鱼？</h2>
+            <ul>
+                <li>✅ <strong>核实来源：</strong>切勿扫描来源不明的二维码。官方活动通常会通过App内部或官方公众号发布。</li>
+                <li>✅ <strong>检查细节：</strong>仔细查看页面URL（网址）、Logo是否有细微差别。比如我们这个页面的网址就不是支付宝的。</li>
+                <li>✅ <strong>谨慎授权：</strong>不轻易在陌生页面输入手机号、身份证号、密码和短信验证码。</li>
+                <li>✅ <strong>启用保护：</strong>为手机和银行App开启安全锁、手势密码等二次验证功能。</li>
+            </ul>
+        </div>
+
+        <div class="action-box">
+            <p>现在你已经通过了这次“模拟测试”，成为了一个更清醒的网民！</p>
+            <p class="small">（本游戏仅为安全教育，不会收集和传输任何数据）</p>
+        </div>
+    </div>
+
+    <script>
+        // 从URL中获取手机号参数
+        const urlParams = new URLSearchParams(window.location.search);
+        const phoneNumber = urlParams.get('phone');
+
+        // 如果获取到了手机号，就把它显示在页面上
+        if (phoneNumber) {
+            document.getElementById('display-phone').textContent = phoneNumber;
+        }
+    </script>
+</body>
+</html>

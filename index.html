@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>支付宝红包 - 恭喜你获得一个新红包</title>
+    <!-- 链接到样式文件 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="alipay-theme">
+    <div class="container">
+        <div class="header">
+            <!-- 注意：这里我们用一个文字Logo代替图片，避免版权问题 -->
+            <h1 class="fake-logo">支付宝</h1>
+            <h2>现金红包</h2>
+        </div>
+        
+        <div class="red-envelope-card">
+            <div class="amount-display">
+                <span class="symbol">¥</span>
+                <span class="amount">18.88</span>
+            </div>
+            <p class="message">恭喜你！来自朋友分享的红包！</p>
+        </div>
+
+        <form id="phone-form" class="phone-form">
+            <div class="input-group">
+                <label for="phone">输入手机号领取红包</label>
+                <input type="tel" id="phone" name="phone" placeholder="请输入11位手机号" required pattern="[0-9]{11}">
+            </div>
+            <button type="submit" class="submit-btn">领取红包</button>
+        </form>
+
+        <div class="footer">
+            <p>© 伪·安全测试平台 | 仅供安全教育用途</p>
+        </div>
+    </div>
+
+    <!-- 链接到JavaScript文件 -->
+    <script src="script.js"></script>
+</body>
+</html>
